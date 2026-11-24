@@ -3,52 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>大家說英語 - 中翻英測驗</title>
+  <title>ABC互動英語 - 單篇全覽測驗</title>
   <style>
-    body{font-family:sans-serif;background:#f0f4f8;display:flex;justify-content:center;align-items:center;min-height:100vh;margin:0;padding:1rem;box-sizing:border-box}
-    .box{background:#fff;padding:2rem;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.08);width:100%;max-width:600px;text-align:center}
-    h1{color:#1e293b;font-size:1.5rem;margin:0 0 1.2rem}
-    .panel{display:flex;flex-direction:column;gap:1rem;text-align:left;background:#f8fafc;padding:1.2rem;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:1.5rem}
-    label{font-weight:bold;color:#334155;font-size:.95rem;display:block;margin-bottom:.3rem}
-    select,input{width:100%;padding:.75rem;font-size:1rem;border:1px solid #cbd5e1;border-radius:8px;box-sizing:border-box}
-    input{border-width:2px;margin-bottom:1rem;outline:none}
+    body{font-family:sans-serif;background:#f0f4f8;margin:0;padding:1.5rem 1rem;color:#1e293b}
+    .box{background:#fff;padding:2rem;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.08);max-width:720px;margin:0 auto}
+    h1{font-size:1.5rem;margin:0 0 1.2rem;text-align:center}
+    h2{font-size:1.15rem;color:#1d4ed8;border-bottom:2px solid #dbeafe;padding-bottom:.4rem;margin:1.5rem 0 1rem}
+    .panel{background:#f8fafc;padding:1.2rem;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:1.2rem}
+    label{font-weight:bold;display:block;margin-bottom:.4rem}
+    select{width:100%;padding:.75rem;font-size:1rem;border:1px solid #cbd5e1;border-radius:8px;background:#fff}
+    .q-item{background:#f8fafc;padding:1rem;border-radius:8px;border:1px solid #e2e8f0;margin-bottom:.9rem}
+    .q-title{font-weight:bold;margin-bottom:.5rem;font-size:1.05rem;line-height:1.4}
+    input{width:100%;padding:.65rem;font-size:1rem;border:2px solid #cbd5e1;border-radius:6px;box-sizing:border-box;outline:none}
     input:focus{border-color:#2563eb}
-    .badge{display:inline-block;background:#dbeafe;color:#1d4ed8;font-size:.85rem;padding:.25rem .75rem;border-radius:999px;margin-bottom:.6rem;font-weight:bold}
-    .prog{color:#64748b;font-size:.9rem;margin-bottom:1rem}
-    .qbox{background:#eff6ff;padding:1.4rem;border-radius:10px;font-size:1.25rem;font-weight:bold;color:#1e40af;margin-bottom:1.2rem;line-height:1.5}
-    .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-    button{padding:.75rem 1.5rem;font-size:1rem;font-weight:bold;border:none;border-radius:8px;cursor:pointer;color:#fff}
-    .b1{background:#2563eb}.b2{background:#10b981;display:none}.b3{background:#64748b}
-    .fb{margin-top:1.2rem;font-size:1rem;font-weight:bold;min-height:1.5rem;line-height:1.6}
-    .ok{color:#10b981}.no{color:#ef4444}
+    input.ok{border-color:#10b981;background:#ecfdf5}
+    input.no{border-color:#ef4444;background:#fef2f2}
+    .ans-tip{margin-top:.4rem;font-size:.92rem;font-weight:bold}
+    .ans-tip.ok{color:#10b981}.ans-tip.no{color:#ef4444}
+    .btns{display:flex;gap:10px;justify-content:center;margin-top:1.5rem;flex-wrap:wrap}
+    button{padding:.75rem 1.8rem;font-size:1rem;font-weight:bold;border:none;border-radius:8px;cursor:pointer;color:#fff}
+    .b1{background:#2563eb}.b2{background:#10b981}.b3{background:#64748b}
+    .score-banner{background:#eff6ff;color:#1e40af;padding:1rem;border-radius:10px;text-align:center;font-size:1.2rem;font-weight:bold;margin-bottom:1.2rem;display:none}
   </style>
 </head>
 <body>
 <div class="box">
-  <h1>大家說英語 - 中翻英測驗</h1>
+  <h1>ABC互動英語 - 中翻英全覽測驗</h1>
+  
   <div id="s1">
     <div class="panel">
-      <div><label>1. 選擇測驗單元：</label><select id="uSel"><option value="ALL">全部單元混合測驗</option></select></div>
-      <div><label>2. 選擇題目類型：</label><select id="tSel"><option value="ALL">單字、片語 ＋ 句子（全部）</option><option value="W">僅考單字與片語</option><option value="S">僅考完整句子</option></select></div>
-      <div><label>3. 測驗題數（隨機抽取）：</label><select id="cSel"><option value="10">10 題</option><option value="20" selected>20 題</option><option value="30">30 題</option><option value="999">該範圍全部題目</option></select></div>
+      <label for="uSel">選擇要測驗的單元：</label>
+      <select id="uSel"></select>
     </div>
-    <button type="button" class="b1" onclick="go()">開始測驗</button>
+    <div class="btns"><button type="button" class="b1" onclick="go()">展開本篇所有題目</button></div>
   </div>
+
   <div id="s2" style="display:none">
-    <div class="prog" id="pg"></div>
-    <div><span class="badge" id="bg"></span></div>
-    <div class="qbox" id="qu"></div>
-    <input type="text" id="inp" placeholder="請輸入英文翻譯..." autocomplete="off">
+    <div class="score-banner" id="scBanner"></div>
+    <div id="listArea"></div>
     <div class="btns">
-      <button type="button" class="b1" id="sub" onclick="chk()">送出答案</button>
-      <button type="button" class="b2" id="nxt" onclick="nxt()">下一題</button>
-      <button type="button" class="b3" onclick="rst()">返回選單</button>
+      <button type="button" class="b2" id="subBtn" onclick="chkAll()">全部交卷批改</button>
+      <button type="button" class="b1" id="retryBtn" style="display:none" onclick="go()">重新作答本篇</button>
+      <button type="button" class="b3" onclick="rst()">切換其他單元</button>
     </div>
-    <div class="fb" id="fb"></div>
   </div>
 </div>
 
-<!-- 題庫資料區（請將題庫貼在下方 script 標籤中間） -->
+<!-- 題庫資料區（請將你收集的所有題庫貼在下方 script 標籤中間） -->
 <script type="text/plain" id="rawBank">
 用英語談論家人|W|(外)祖父|grandfather/grandpa
 用英語談論家人|W|(外)祖母|grandmother/grandma
@@ -424,57 +425,88 @@ Nov 4w 品格英文 化嫉妒為成長(2)|S|Glen 找到了一個把仇恨轉化�
 Nov 4w 品格英文 化嫉妒為成長(2)|S|首先，把平底鍋加熱。接著，在鍋裡倒一點油。最後，打一顆蛋到鍋裡。|First, heat the pan. Next, pour a little oil into the pan. Finally, crack an egg into the pan.
 Nov 4w 品格英文 化嫉妒為成長(2)|S|Lily 會參加比賽，我也會。|Lily will join the contest, and so will I.
 Nov 4w 品格英文 化嫉妒為成長(2)|S|Emily 喜歡巧克力，Tom 也是。|Emily likes chocolate, and so does Tom.
+  
+
+
 
 </script>
 
 <script>
 const raw = document.getElementById("rawBank").textContent.trim().split("\n");
-const DB = raw.filter(line => line.includes("|")).map(line => {
-  const parts = line.split("|");
-  return { u: parts[0].trim(), t: parts[1].trim(), zh: parts[2].trim(), en: parts[3].split("/").map(s => s.trim()) };
+const DB = raw.filter(l => l.includes("|")).map(l => {
+  const p = l.split("|");
+  return { u: p[0].trim(), t: p[1].trim(), zh: p[2].trim(), en: p[3].split("/").map(s => s.trim()) };
 });
-let Q=[], idx=0, sc=0;
+let curQ = [];
 const uSel = document.getElementById("uSel");
 [...new Set(DB.map(x => x.u))].forEach(u => { let o = document.createElement("option"); o.value = o.textContent = u; uSel.appendChild(o); });
 const norm = s => s.trim().toLowerCase().replace(/[.!?,;]+$/g, "").replace(/\s+/g, " ");
-function go(){
-  const u = uSel.value, t = document.getElementById("tSel").value, c = +document.getElementById("cSel").value;
-  let f = DB.filter(x => (u === "ALL" || x.u === u) && (t === "ALL" || x.t === t));
-  if(!f.length) return alert("無符合條件的題目！");
-  for(let i = f.length - 1; i > 0; i--){ let j = Math.floor(Math.random() * (i + 1)); [f[i], f[j]] = [f[j], f[i]]; }
-  Q = f.slice(0, c); idx = 0; sc = 0;
-  document.getElementById("s1").style.display = "none"; document.getElementById("s2").style.display = "block"; document.getElementById("inp").style.display = "block";
-  ld();
+
+function go() {
+  const u = uSel.value;
+  const words = DB.filter(x => x.u === u && x.t === "W");
+  const sents = DB.filter(x => x.u === u && x.t === "S");
+  curQ = [...words, ...sents];
+  
+  let html = "";
+  let idx = 0;
+  if (words.length) {
+    html += `<h2>一、單字與片語（共 ${words.length} 題）</h2>`;
+    words.forEach(q => { html += renderItem(q, idx++); });
+  }
+  if (sents.length) {
+    html += `<h2>二、重點句子翻譯（共 ${sents.length} 題）</h2>`;
+    sents.forEach(q => { html += renderItem(q, idx++); });
+  }
+  
+  document.getElementById("listArea").innerHTML = html;
+  document.getElementById("scBanner").style.display = "none";
+  document.getElementById("subBtn").style.display = "inline-block";
+  document.getElementById("retryBtn").style.display = "none";
+  document.getElementById("s1").style.display = "none";
+  document.getElementById("s2").style.display = "block";
+  window.scrollTo(0, 0);
 }
-function ld(){
-  if(idx >= Q.length) return res();
-  const q = Q[idx], pt = Math.round((sc / Q.length) * 100);
-  document.getElementById("pg").textContent = `第 ${idx+1} / ${Q.length} 題 | 目前得分：${pt} 分`;
-  document.getElementById("bg").textContent = `${q.u} (${q.t === "W" ? "單字/片語" : "句子"})`;
-  document.getElementById("qu").textContent = q.zh;
-  const inp = document.getElementById("inp"); inp.value = ""; inp.disabled = false; inp.focus();
-  const fb = document.getElementById("fb"); fb.textContent = ""; fb.className = "fb";
-  document.getElementById("sub").style.display = "inline-block"; document.getElementById("nxt").style.display = "none";
+
+function renderItem(q, i) {
+  return `<div class="q-item">
+    <div class="q-title">${i + 1}. ${q.zh}</div>
+    <input type="text" id="inp_${i}" placeholder="請輸入英文..." autocomplete="off">
+    <div class="ans-tip" id="tip_${i}"></div>
+  </div>`;
 }
-function chk(){
-  const inp = document.getElementById("inp"), fb = document.getElementById("fb"), v = norm(inp.value);
-  if(!v){ fb.textContent = "請先輸入英文答案再送出！"; fb.className = "fb no"; return; }
-  const q = Q[idx], ok = q.en.map(norm).includes(v);
-  if(ok){ sc++; fb.textContent = "答對了！完全正確！"; fb.className = "fb ok"; }
-  else{ fb.innerHTML = `答錯了！<br>參考答案：${q.en.join(" / ")}`; fb.className = "fb no"; }
-  document.getElementById("pg").textContent = `第 ${idx+1} / ${Q.length} 題 | 目前得分：${Math.round((sc / Q.length) * 100)} 分`;
-  inp.disabled = true; document.getElementById("sub").style.display = "none";
-  const nxt = document.getElementById("nxt"); nxt.style.display = "inline-block"; nxt.focus();
+
+function chkAll() {
+  let okCnt = 0;
+  curQ.forEach((q, i) => {
+    const inp = document.getElementById(`inp_${i}`);
+    const tip = document.getElementById(`tip_${i}`);
+    const v = norm(inp.value);
+    inp.disabled = true;
+    if (v && q.en.map(norm).includes(v)) {
+      okCnt++;
+      inp.className = "ok";
+      tip.className = "ans-tip ok";
+      tip.textContent = "✔ 答對了！";
+    } else {
+      inp.className = "no";
+      tip.className = "ans-tip no";
+      tip.textContent = `✘ 參考答案：${q.en.join(" / ")}`;
+    }
+  });
+  const sc = Math.round((okCnt / curQ.length) * 100);
+  const banner = document.getElementById("scBanner");
+  banner.textContent = `測驗成績：${sc} 分（答對 ${okCnt} / ${curQ.length} 題）`;
+  banner.style.display = "block";
+  document.getElementById("subBtn").style.display = "none";
+  document.getElementById("retryBtn").style.display = "inline-block";
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
-function nxt(){ idx++; ld(); }
-function res(){
-  document.getElementById("pg").textContent = "測驗完成！"; document.getElementById("bg").textContent = "成績結算";
-  document.getElementById("qu").textContent = `總得分：${Math.round((sc / Q.length) * 100)} 分（答對 ${sc} / ${Q.length} 題）`;
-  document.getElementById("inp").style.display = "none"; document.getElementById("sub").style.display = "none"; document.getElementById("nxt").style.display = "none";
-  document.getElementById("fb").innerHTML = `<button type="button" class="b1" onclick="go()">再測驗一次</button>`;
+
+function rst() {
+  document.getElementById("s2").style.display = "none";
+  document.getElementById("s1").style.display = "block";
 }
-function rst(){ document.getElementById("s2").style.display = "none"; document.getElementById("s1").style.display = "block"; }
-document.getElementById("inp").addEventListener("keypress", e => { if(e.key === "Enter" && !e.target.disabled) chk(); });
 </script>
 </body>
 </html>
