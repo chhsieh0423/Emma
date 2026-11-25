@@ -34,7 +34,7 @@
   <div id="s1">
     <div class="panel">
       <label for="uSel">選擇要測驗的單元：</label>
-      <select id="uSel"></select>
+      <select id="uSel"><option>題庫載入中...</option></select>
     </div>
     <div class="btns">
       <button type="button" class="b1" onclick="go()">展開本篇所有題目</button>
@@ -64,399 +64,28 @@
   </div>
 </div>
 
-<!-- 題庫資料區（請將你收集的所有題庫貼在下方 script 標籤中間） -->
-<script type="text/plain" id="rawBank">
-  
-<script type="text/plain" id="rawBank">
-用英語談論家人|W|(外)祖父|grandfather/grandpa
-用英語談論家人|W|(外)祖母|grandmother/grandma
-用英語談論家人|W|父親|father/dad
-用英語談論家人|W|母親|mother/mom
-用英語談論家人|W|與父母親同輩的男性（伯、叔、舅、姑丈、姨丈）|uncle
-用英語談論家人|W|與父母親同輩的女性（伯母、嬸嬸、舅媽、姑姑、阿姨）|aunt
-用英語談論家人|W|姊妹的丈夫（姊夫；妹夫）|brother-in-law
-用英語談論家人|W|姊姊；妹妹|sister
-用英語談論家人|W|哥哥；弟弟|brother
-用英語談論家人|W|兄弟的妻子（嫂嫂；弟媳）|sister-in-law
-用英語談論家人|W|丈夫|husband
-用英語談論家人|W|妻子|wife
-用英語談論家人|W|堂(表)兄弟姊妹|cousin
-用英語談論家人|W|同輩親友的兒子（姪子；外甥）|nephew
-用英語談論家人|W|同輩親友的女兒（姪女；外甥女）|niece
-用英語談論家人|W|兒子|son
-用英語談論家人|W|女兒|daughter
-Oct. 1w-1 小王子(1)|W|嚴肅的；認真的 (adj.)|serious
-Oct. 1w-1 小王子(1)|W|出現 (v.)|appear
-Oct. 1w-1 小王子(1)|W|感到驚訝 (adj.)|surprised
-Oct. 1w-1 小王子(1)|W|不開心的 (adj.)|unhappy
-Oct. 1w-1 小王子(1)|W|擔心；擔憂|worry about
-Oct. 1w-1 小王子(1)|W|A稱呼B為...|A calls B/call B
-Oct. 1w-1 小王子(1)|W|聆聽|listen to
-Oct. 1w-1 小王子(1)|S|James 看起來是個相當嚴肅的人。|James looks like a pretty serious person./James looks like a very serious person./James seems like a pretty serious person.
-Oct. 1w-1 小王子(1)|S|我們的第一位客人是六點半到的。|Our first guest appeared at six thirty./Our first guest arrived at six thirty./Our first guest appeared at 6:30.
-Oct. 1w-1 小王子(1)|S|你記得我的生日，我好驚訝。|I am surprised that you remembered my birthday./I'm surprised you remembered my birthday.
-Oct. 1w-1 小王子(1)|S|Peter 不能出去玩，所以他不開心。|Peter cannot go out to play, so he is unhappy./Peter can't go out to play, so he's unhappy.
-Oct. 1w-1 小王子(1)|S|不要擔心孩子們，他們很安全。|Don't worry about the children. They are safe./Do not worry about the kids, they are safe.
-Oct. 1w-1 小王子(1)|S|我媽媽稱呼我為她的小天使。|My mom calls me her little angel./My mother calls me her little angel.
-Oct. 1w-1 小王子(1)|S|Sheila 什麼類型的播客都聽。|Sheila listens to all kinds of podcasts./Sheila listens to any kind of podcast.
-Oct. 1w-2 小王子(2)|W|成年人 (n.)|adult
-Oct. 1w-2 小王子(2)|W|知識 (n.)|knowledge
-Oct. 1w-2 小王子(2)|W|理解；明白 (v.)|understand
-Oct. 1w-2 小王子(2)|W|到達 (v.)|reach/arrive
-Oct. 1w-2 小王子(2)|W|增加；增添|add to
-Oct. 1w-2 小王子(2)|W|一點也不|not at all
-Oct. 1w-2 小王子(2)|W|A送B去(某地)|send B to
-Oct. 1w-2 小王子(2)|S|只有成年人可以進入。|Only adults can enter./Only adults are allowed to enter.
-Oct. 1w-2 小王子(2)|S|學生從老師身上獲得知識。|Students gain knowledge from their teachers./Students get knowledge from teachers.
-Oct. 1w-2 小王子(2)|S|Jackie 有時候並不了解自己。|Jackie doesn't understand himself sometimes./Jackie sometimes does not understand herself.
-Oct. 1w-2 小王子(2)|S|我們快要抵達台中了。|We are about to reach Taichung./We are arriving in Taichung soon.
-Oct. 1w-2 小王子(2)|S|音樂可以增添樂趣。|Music can add to the fun./Music can add fun.
-Oct. 1w-2 小王子(2)|S|我吃了一頓豐盛的早餐，所以一點也不餓。|I ate a big breakfast, so I am not hungry at all./I had a big breakfast, so I'm not hungry at all.
-Oct. 1w-2 小王子(2)|S|Iris後來把她兒子送去夏令營。|Iris later sent her son to summer camp./Later, Iris sent her son to a summer camp.
-Oct. 1w-3 小王子(3)|W|修理 (v.)|fix/repair
-Oct. 1w-3 小王子(3)|W|飛機 (n.)|plane/airplane
-Oct. 1w-3 小王子(3)|W|計畫 (n.)|plan
-Oct. 1w-3 小王子(3)|W|笑聲 (n.)|laughter
-Oct. 1w-3 小王子(3)|W|用完、用光|run out of
-Oct. 1w-3 小王子(3)|W|一陣子之後|after a while
-Oct. 1w-3 小王子(3)|W|持續一陣子|for a while
-Oct. 1w-3 小王子(3)|W|抬頭看；往上看|look up
-Oct. 1w-3 小王子(3)|S|可以麻煩你幫我修理電腦嗎？|Could you please fix my computer for me?/Can you help me fix my computer?
-Oct. 1w-3 小王子(3)|S|我在飛機上坐靠窗的位子。|I took a window seat on the plane./I sat by the window on the plane.
-Oct. 1w-3 小王子(3)|S|你這個週末有任何計畫嗎？|Do you have any plans for this weekend?/Do you have any plans this weekend?
-Oct. 1w-3 小王子(3)|S|小寶寶的笑聲讓大家都笑了。|The baby's laughter made everyone laugh.
-Oct. 1w-3 小王子(3)|S|快點！我們沒時間了。|Hurry up! We are running out of time./Hurry! We're running out of time.
-Oct. 1w-3 小王子(3)|S|一陣子之後，房間變得相當安靜。|After a while, the room became quite quiet./After a while, the room got pretty quiet.
-Oct. 1w-3 小王子(3)|S|我在咖啡廳待了一陣子。|I stayed at the coffee shop for a while./I stayed in the cafe for a while.
-Oct. 1w-3 小王子(3)|S|我們抬頭看時，天空萬里無雲。|When we looked up, there were no clouds in the sky./When we looked up, the sky was cloudless.
-Oct. 2w 猜拳文化的起源(1)|W|(一)塊、個 (n.)|piece
-Oct. 2w 猜拳文化的起源(1)|W|贏家；勝利者 (n.)|winner
-Oct. 2w 猜拳文化的起源(1)|W|覆蓋；遮住 (v.)|cover
-Oct. 2w 猜拳文化的起源(1)|W|剪；切 (v.)|cut
-Oct. 2w 猜拳文化的起源(1)|W|(一)千的 (adj.)|thousand
-Oct. 2w 猜拳文化的起源(1)|W|青蛙 (n.)|frog
-Oct. 2w 猜拳文化的起源(1)|W|剩下...|be left/left
-Oct. 2w 猜拳文化的起源(1)|W|A叫做B|A is called B/be called
-Oct. 2w 猜拳文化的起源(1)|W|剩下五分鐘|five minutes left/there are five minutes left
-Oct. 2w 猜拳文化的起源(1)|S|你想要幾塊雞肉？|How many pieces of chicken do you want?/How many pieces of chicken would you like?
-Oct. 2w 猜拳文化的起源(1)|S|比賽的贏家會得到一份大獎。|The winner of the game will get a big prize./The winner of the contest will get a grand prize.
-Oct. 2w 猜拳文化的起源(1)|S|Mary 的頭髮把她的臉都遮住了。|Mary's hair covered her face.
-Oct. 2w 猜拳文化的起源(1)|S|我把蛋糕切成兩半。|I cut the cake in half./I cut the cake into two halves.
-Oct. 2w 猜拳文化的起源(1)|S|Kim 每年大約會花一千美元治裝。|Kim spends about a thousand dollars on clothes every year.
-Oct. 2w 猜拳文化的起源(1)|S|我們看見池塘裡有幾隻青蛙。|We saw several frogs in the pond./We saw some frogs in the pond.
-Oct. 2w 猜拳文化的起源(1)|S|冰箱裡沒有剩下任何牛奶。|There is no milk left in the fridge./There isn't any milk left in the refrigerator.
-Oct. 2w 猜拳文化的起源(1)|S|那棟建築物叫做台北 101。|That building is called Taipei 101.
-Oct. 2w 猜拳文化的起源(2)|W|(一)百的 (adj.)|hundred
-Oct. 2w 猜拳文化的起源(2)|W|西方國家 (n.)|Western country/the West
-Oct. 2w 猜拳文化的起源(2)|W|報紙 (n.)|newspaper
-Oct. 2w 猜拳文化的起源(2)|W|雜誌 (n.)|magazine
-Oct. 2w 猜拳文化的起源(2)|W|操場；遊樂場 (n.)|playground
-Oct. 2w 猜拳文化的起源(2)|W|辦公室 (n.)|office
-Oct. 2w 猜拳文化的起源(2)|W|(某事物)傳到(某地)|make its way to
-Oct. 2w 猜拳文化的起源(2)|W|很快地；不久後|before long
-Oct. 2w 猜拳文化的起源(2)|S|Penny 做了一百片的餅乾。|Penny made a hundred cookies./Penny made one hundred cookies.
-Oct. 2w 猜拳文化的起源(2)|S|那個節日在西方國家很重要。|That holiday is very important in Western countries.
-Oct. 2w 猜拳文化的起源(2)|S|我爺爺現在都用手機看報紙。|My grandpa reads the newspaper on his phone now.
-Oct. 2w 猜拳文化的起源(2)|S|Jessie 為了一本旅遊雜誌寫遊記。|Jessie writes travel stories for a travel magazine./Jessie writes for a travel magazine.
-Oct. 2w 猜拳文化的起源(2)|S|你喜歡在遊樂場玩什麼？|What do you like to play on the playground?
-Oct. 2w 猜拳文化的起源(2)|S|該公司在世界各地都有辦事處。|The company has offices all over the world.
-Oct. 2w 猜拳文化的起源(2)|S|那道義式料理傳到了美國。|That Italian dish made its way to the US.
-Oct. 2w 猜拳文化的起源(2)|S|那個樂團推出了一首新歌，不久後就爆紅。|The band released a new song, and before long it became a huge hit.
-Oct. 3w 名人傳記 查理.蒙格(1)|W|成功的 (adj.)|successful
-Oct. 3w 名人傳記 查理.蒙格(1)|W|直的 (adj.)|straight
-Oct. 3w 名人傳記 查理.蒙格(1)|W|艱難的；難熬的 (adj.)|tough/hard
-Oct. 3w 名人傳記 查理.蒙格(1)|W|受訓；訓練 (v.)|train
-Oct. 3w 名人傳記 查理.蒙格(1)|W|科學 (n.)|science
-Oct. 3w 名人傳記 查理.蒙格(1)|W|法律 (n.)|law
-Oct. 3w 名人傳記 查理.蒙格(1)|W|律師 (n.)|lawyer
-Oct. 3w 名人傳記 查理.蒙格(1)|W|(某人)所處的時代|one's day/in one's day
-Oct. 3w 名人傳記 查理.蒙格(1)|W|時代；年代|day/era
-Oct. 3w 名人傳記 查理.蒙格(1)|W|休學；退學|drop out/drop out of school
-Oct. 3w 名人傳記 查理.蒙格(1)|W|中斷；停止|drop out
-Oct. 3w 名人傳記 查理.蒙格(1)|S|那部電影非常成功。|That movie was very successful./The movie is very successful.
-Oct. 3w 名人傳記 查理.蒙格(1)|S|從 A 點到 B 點畫一條直線。|Draw a straight line from point A to point B.
-Oct. 3w 名人傳記 查理.蒙格(1)|S|我們度過了一個難熬的上班日。|We had a tough day at work.
-Oct. 3w 名人傳記 查理.蒙格(1)|S|Alyssa 受訓成為一名飛行員。|Alyssa trained to become a pilot./Alyssa trained to be a pilot.
-Oct. 3w 名人傳記 查理.蒙格(1)|S|台大醫院是基因科學的領頭羊。|NTU Hospital is a leader in genetic science.
-Oct. 3w 名人傳記 查理.蒙格(1)|S|Elaine 在律師事務所找到一份工作。|Elaine found a job at a law firm.
-Oct. 3w 名人傳記 查理.蒙格(1)|S|Jordan 是我們這時代最優秀的球員之一。|Jordan is one of the best players of our day.
-Oct. 3w 名人傳記 查理.蒙格(1)|S|Billy 想休學，但他的父母不讓他這麼做。|Billy wanted to drop out of school, but his parents wouldn't let him.
-Oct. 3w 名人傳記 查理.蒙格(2)|W|癌症 (n.)|cancer
-Oct. 3w 名人傳記 查理.蒙格(2)|W|精力；能量 (n.)|energy
-Oct. 3w 名人傳記 查理.蒙格(2)|W|安全的 (adj.)|safe
-Oct. 3w 名人傳記 查理.蒙格(2)|W|存；儲存 (v.)|save
-Oct. 3w 名人傳記 查理.蒙格(2)|W|主題 (n.)|subject/topic
-Oct. 3w 名人傳記 查理.蒙格(2)|W|明智的；有智慧的 (adj.)|wise
-Oct. 3w 名人傳記 查理.蒙格(2)|W|死於...|die of
-Oct. 3w 名人傳記 查理.蒙格(2)|W|A讓B痛苦|leave B in pain
-Oct. 3w 名人傳記 查理.蒙格(2)|W|處於痛苦之中|in pain
-Oct. 3w 名人傳記 查理.蒙格(2)|W|放棄|give up
-Oct. 3w 名人傳記 查理.蒙格(2)|S|那種癌症不容易被發現。|That kind of cancer is not easy to find.
-Oct. 3w 名人傳記 查理.蒙格(2)|S|我大部份的精力都投入在課業上。|I put most of my energy into my schoolwork.
-Oct. 3w 名人傳記 查理.蒙格(2)|S|現在過馬路不安全。|It is not safe to cross the street now.
-Oct. 3w 名人傳記 查理.蒙格(2)|S|你存了多少錢呢？|How much money have you saved?
-Oct. 3w 名人傳記 查理.蒙格(2)|S|會議的主題是明年的計畫。|The subject of the meeting is next year's plan.
-Oct. 3w 名人傳記 查理.蒙格(2)|S|你那麼做很明智。|It is wise of you to do that.
-Oct. 3w 名人傳記 查理.蒙格(2)|S|那位老人死於心臟病。|The old man died of heart disease.
-Oct. 3w 名人傳記 查理.蒙格(2)|S|那場意外讓 Ted 很痛苦。|The accident left Ted in great pain.
-Oct. 3w 名人傳記 查理.蒙格(2)|S|我們不應該這麼快就放棄。|We shouldn't give up so soon.
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|W|國家 (n.)|country
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|W|提前；向前 (adv.)|ahead
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|W|(日、月)落下 (v.)|set
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|W|舒適的 (adj.)|comfortable/pleasant
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|W|情況並非如此；事實不是這樣|that is not the case
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|W|起源於...|have its roots in
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|W|冷卻下來；變涼|cool down
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|W|根源；來源|root
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|S|Lori 這趟旅行造訪了五個國家。|Lori visited five countries on this trip.
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|S|Jason 把會議提前了一週。|Jason moved the meeting ahead by one week.
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|S|月亮每天從西邊落下。|The moon sets in the west every day.
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|S|這裡的早晨舒適宜人。|Mornings here are comfortable and pleasant.
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|S|在台灣開車是靠右行駛，而在日本不是。|In Taiwan, people drive on the right, while in Japan that is not the case.
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|S|這個舞蹈源自於非洲文化。|This dance has its roots in African culture.
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(1)|S|Edgar 把湯放涼了才喝。|Edgar let the soup cool down before eating it.
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|W|主要的 (adj.)|main
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|W|社交的 (adj.)|social
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|W|經歷；體驗 (n.)|experience
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|W|餐廳 (n.)|restaurant
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|W|扮演角色；發揮作用|play a role/play a part
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|W|因為、由於|since/because
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|W|變成|turn into
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|W|扮演|play
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|W|角色|role
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|S|這個故事的主旨是什麼？|What is the main idea of this story?
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|S|這份工作需要良好的社交技能。|This job requires good social skills.
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|S|對孩子們來說，那是個很棒的體驗。|For the children, that was a great experience.
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|S|這是我第一次來義式餐廳。|This is my first time at an Italian restaurant.
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|S|Owen 的父母在他的人生中扮演重要角色。|Owen's parents play an important role in his life.
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|S|我們待在家，因為在下雨。|We stayed home since it was raining./We stayed at home because it was raining.
-Oct. 4w 愈夜愈熱鬧的西班牙晚餐(2)|S|那個事件變成了一堂人生課。|That event turned into a life lesson.
-Oct. 4w 微短劇崛起(1)|W|影片 (n.)|video
-Oct. 4w 微短劇崛起(1)|W|整個的；全部的 (adj.)|whole/entire
-Oct. 4w 微短劇崛起(1)|W|動作場面 (n.)|action scene
-Oct. 4w 微短劇崛起(1)|W|奇怪的 (adj.)|strange/weird
-Oct. 4w 微短劇崛起(1)|W|不是每個人都(做某事)|not everyone
-Oct. 4w 微短劇崛起(1)|W|花(時間)在(某事物)上|spend time on
-Oct. 4w 微短劇崛起(1)|W|持續(做某事)|keep on/keep
-Oct. 4w 微短劇崛起(1)|S|Margaret 喜歡看烹飪影片。|Margaret likes watching cooking videos.
-Oct. 4w 微短劇崛起(1)|S|Max 可以自己吃完一整個披薩。|Max can eat a whole pizza by himself.
-Oct. 4w 微短劇崛起(1)|S|那部電影的動作場面誇張到令人難以置信。|The action scenes in that movie are too crazy to believe.
-Oct. 4w 微短劇崛起(1)|S|我看到院子裡有一隻奇怪的動物。|I saw a strange animal in the yard.
-Oct. 4w 微短劇崛起(1)|S|不是每個人都上巴士了，所以我們得等一下。|Not everyone is on the bus, so we have to wait a moment.
-Oct. 4w 微短劇崛起(1)|S|Evan 一天花一個小時在學業上。|Evan spends an hour a day on his schoolwork.
-Oct. 4w 微短劇崛起(1)|S|繼續走，我們快到那裡了。|Keep walking; we are almost there.
-Oct. 4w 微短劇崛起(2)|W|開始 (v.)|begin/start
-Oct. 4w 微短劇崛起(2)|W|公司；企業 (n.)|business/company
-Oct. 4w 微短劇崛起(2)|W|現代的 (adj.)|modern
-Oct. 4w 微短劇崛起(2)|W|語言 (n.)|language
-Oct. 4w 微短劇崛起(2)|W|把A加入B中|add A to B
-Oct. 4w 微短劇崛起(2)|W|...勢不可擋|there is no stopping
-Oct. 4w 微短劇崛起(2)|W|取代、代替|take the place of/replace
-Oct. 4w 微短劇崛起(2)|W|地位|place
-Oct. 4w 微短劇崛起(2)|W|阻止|stop
-Oct. 4w 微短劇崛起(2)|S|那項傳統始於何時？|When did that tradition begin?
-Oct. 4w 微短劇崛起(2)|S|許多商家因為新冠疫情而停業。|Many businesses closed because of COVID-19.
-Oct. 4w 微短劇崛起(2)|S|這座城市有許多現代建築。|This city has many modern buildings.
-Oct. 4w 微短劇崛起(2)|S|Greg 剛報名了一門語言課程。|Greg just signed up for a language course.
-Oct. 4w 微短劇崛起(2)|S|那位藝術家在他的畫作添加了幾朵雲彩。|The artist added a few clouds to his painting.
-Oct. 4w 微短劇崛起(2)|S|這支隊伍勢不可擋。|There is no stopping this team.
-Oct. 4w 微短劇崛起(2)|S|沒有什麼能阻止我們，我們無所不能。|Nothing can stop us; we can do anything.
-Oct. 4w 微短劇崛起(2)|S|沒有人能取代我媽媽。|Nobody can take the place of my mom.
-Oct. 4w 微短劇崛起(3)|W|付錢 (v.)|pay
-Oct. 4w 微短劇崛起(3)|W|花費(金錢) (v.)|cost
-Oct. 4w 微短劇崛起(3)|W|價格 (n.)|price
-Oct. 4w 微短劇崛起(3)|W|票 (n.)|ticket
-Oct. 4w 微短劇崛起(3)|W|碰巧；剛好|happen to
-Oct. 4w 微短劇崛起(3)|W|累積；總計|add up
-Oct. 4w 微短劇崛起(3)|W|A 和 B 一樣|A is the same as B/the same as
-Oct. 4w 微短劇崛起(3)|S|你可以付錢嗎？我把錢包忘在辦公室了。|Can you pay? I left my wallet at the office.
-Oct. 4w 微短劇崛起(3)|S|這個飯店房間一晚要價一百二十五美元。|This hotel room costs 125 dollars a night.
-Oct. 4w 微短劇崛起(3)|S|汽油價格不斷攀升。|Gas prices keep rising.
-Oct. 4w 微短劇崛起(3)|S|我拿到兩張演唱會的票。|I got two tickets to the concert.
-Oct. 4w 微短劇崛起(3)|S|你會不會剛好有多一枝鉛筆？|Do you happen to have an extra pencil?
-Oct. 4w 微短劇崛起(3)|S|Joe 每天都買一杯大杯咖啡。這累積起來是一大筆錢。|Joe buys a large coffee every day. It adds up to a lot of money.
-Oct. 4w 微短劇崛起(3)|S|我的包包跟你的一樣。|My bag is the same as yours.
-Nov 1w 不消費日(1)|W|開始 (n.) / 創立 (v.)|start/found
-Nov 1w 不消費日(1)|W|節日 (n.)|holiday
-Nov 1w 不消費日(1)|W|季節 (n.)|season
-Nov 1w 不消費日(1)|W|划算的價格 (n.)|bargain
-Nov 1w 不消費日(1)|W|感恩節 (n.)|Thanksgiving
-Nov 1w 不消費日(1)|W|黑色星期五|Black Friday
-Nov 1w 不消費日(1)|W|知道A為B|know A as B
-Nov 1w 不消費日(1)|W|(某人)同意不(做某事)|agree not to
-Nov 1w 不消費日(1)|W|不再(做某事)|no longer
-Nov 1w 不消費日(1)|W|藝術家 (n.)|artist
-Nov 1w 不消費日(1)|S|這週一開始會下雨。|It will rain at the start of this week.
-Nov 1w 不消費日(1)|S|是誰創辦了這個社團？|Who founded this club?
-Nov 1w 不消費日(1)|S|教師節在美國並非節日。|Teachers' Day is not a holiday in the US.
-Nov 1w 不消費日(1)|S|棒球賽季有多長？|How long is the baseball season?
-Nov 1w 不消費日(1)|S|這個攤商用很划算的價格賣我這個包包。|The vendor sold me this bag at a bargain price.
-Nov 1w 不消費日(1)|S|Daniel知道桌球就是乒乓球。|Daniel knows table tennis as ping-pong.
-Nov 1w 不消費日(1)|S|Emily同意不把這個秘密告訴任何人。|Emily agreed not to tell anyone this secret.
-Nov 1w 不消費日(1)|S|我不再住在這了。|I no longer live here.
-Nov 1w 不消費日(1)|S|現在人們還用這個字嗎？|Do people still use this word now?
-Nov 1w 不消費日(2)|W|提高；增加 (v.)|raise/increase
-Nov 1w 不消費日(2)|W|更；甚至 (adv.)|even
-Nov 1w 不消費日(2)|W|注意；關注 (n.)|attention
-Nov 1w 不消費日(2)|W|皮夾；錢包 (n.)|wallet
-Nov 1w 不消費日(2)|W|回收 (v.)|recycle
-Nov 1w 不消費日(2)|W|A移到、改到B|move A to B
-Nov 1w 不消費日(2)|W|移動|move
-Nov 1w 不消費日(2)|W|遠離；避開|stay away from
-Nov 1w 不消費日(2)|W|修理|fix/repair
-Nov 1w 不消費日(2)|S|這家商店提高了飲品價格。|This store raised the prices of its drinks.
-Nov 1w 不消費日(2)|S|今天的天氣甚至更熱了。|The weather today is even hotter.
-Nov 1w 不消費日(2)|S|這個男孩吸引了所有人的注意。|This boy caught everyone's attention.
-Nov 1w 不消費日(2)|S|James拿出皮夾付錢。|James took out his wallet to pay.
-Nov 1w 不消費日(2)|S|這場比賽改到星期日早上了。|The game was moved to Sunday morning.
-Nov 1w 不消費日(2)|S|你應該避免吃甜食。|You should stay away from sweets.
-Nov 1w 不消費日(2)|S|那所學校正在整修教室。|That school is repairing its classrooms.
-Nov 2w 用英語表達感受(A)|W|驚喜 (n.)|surprise
-Nov 2w 用英語表達感受(A)|W|片刻；瞬間 (n.)|second/moment
-Nov 2w 用英語表達感受(A)|W|機車；速克達 (n.)|scooter
-Nov 2w 用英語表達感受(A)|W|漂亮的；可愛的 (adj.)|pretty/cute
-Nov 2w 用英語表達感受(A)|W|車庫 (n.)|garage
-Nov 2w 用英語表達感受(A)|W|怎麼了？什麼事？|what's up/what is wrong
-Nov 2w 用英語表達感受(A)|W|難以接受(某事)|have a hard time accepting
-Nov 2w 用英語表達感受(A)|W|盡(某人)全力|do one's best/try one's best
-Nov 2w 用英語表達感受(A)|W|最大努力|best
-Nov 2w 用英語表達感受(A)|S|這趟旅行是給孩子們的驚喜。|This trip is a surprise for the kids.
-Nov 2w 用英語表達感受(A)|S|我馬上到那邊。|I will be right there.
-Nov 2w 用英語表達感受(A)|S|Sharon 把她的機車停在我的旁邊。|Sharon parked her scooter next to mine.
-Nov 2w 用英語表達感受(A)|S|這些花好漂亮。謝謝你。|These flowers are so pretty. Thank you.
-Nov 2w 用英語表達感受(A)|S|怎麼了？|What's up?/What's wrong?
-Nov 2w 用英語表達感受(A)|S|我需要你幫個忙。|I need you to do me a favor.
-Nov 2w 用英語表達感受(A)|S|Bella 難以接受這個改變，但她沒有放棄。|Bella had a hard time accepting this change, but she didn't give up.
-Nov 2w 用英語表達感受(A)|S|我會盡全力取得好成績。|I will do my best to get good grades.
-Nov 2w 用英語表達感受(B)|W|愚蠢的 (adj.)|silly/stupid
-Nov 2w 用英語表達感受(B)|W|團隊 (n.)|team
-Nov 2w 用英語表達感受(B)|W|報告；通報 (v.)|report
-Nov 2w 用英語表達感受(B)|W|老闆；上司 (n.)|boss
-Nov 2w 用英語表達感受(B)|W|打(某人)的小報告|tell on
-Nov 2w 用英語表達感受(B)|W|向 B 告發 A|report A to B
-Nov 2w 用英語表達感受(B)|W|專案 (n.)|project
-Nov 2w 用英語表達感受(B)|W|停止、不再(做某事)|stop
-Nov 2w 用英語表達感受(B)|W|停下手邊動作，去做另一件事|stop to
-Nov 2w 用英語表達感受(B)|W|(某人)把(某事物)歸功於自己|take credit for
-Nov 2w 用英語表達感受(B)|W|功勞；讚揚|credit
-Nov 2w 用英語表達感受(B)|S|別做任何傻事。|Don't do anything silly.
-Nov 2w 用英語表達感受(B)|S|Mia 和 Ivan 在同一個團隊。|Mia and Ivan are on the same team.
-Nov 2w 用英語表達感受(B)|S|Tim 向警方通報這起事故。|Tim reported the accident to the police.
-Nov 2w 用英語表達感受(B)|S|老闆會在連假前讓員工提早下班。|The boss lets workers leave early before a long weekend.
-Nov 2w 用英語表達感受(B)|S|他們不再為小事爭吵了。|They stopped arguing over small things.
-Nov 2w 用英語表達感受(B)|S|Howard 停下來去上洗手間。|Howard stopped to use the restroom.
-Nov 2w 用英語表達感受(B)|S|你不應該把別人的點子歸功於自己。|You shouldn't take credit for someone else's idea.
-Nov 2w 用英語表達感受(B)|S|Joshua 跟老師打我的小報告。|Joshua told on me to the teacher.
-Nov 2w 用英語表達感受(C)|W|電子郵件 (n.)|email/e-mail
-Nov 2w 用英語表達感受(C)|W|課程 (n.)|course
-Nov 2w 用英語表達感受(C)|W|未來 (adj.)|future
-Nov 2w 用英語表達感受(C)|W|工程師 (n.)|engineer
-Nov 2w 用英語表達感受(C)|W|悲觀的 (adj.)|negative/pessimistic
-Nov 2w 用英語表達感受(C)|W|獎學金 (n.)|scholarship
-Nov 2w 用英語表達感受(C)|W|錄取；考上|get into
-Nov 2w 用英語表達感受(C)|W|確實有(做某事)|do
-Nov 2w 用英語表達感受(C)|W|(某人)對(某事)無能為力|there is nothing one can do about
-Nov 2w 用英語表達感受(C)|W|任何事物|anything
-Nov 2w 用英語表達感受(C)|S|你看我的電子郵件了嗎？|Did you read my email?
-Nov 2w 用英語表達感受(C)|S|那個課程教授電腦技能。|That course teaches computer skills.
-Nov 2w 用英語表達感受(C)|S|未來的學生將會使用這套新的系統。|Future students will use this new system.
-Nov 2w 用英語表達感受(C)|S|那名工程師在一小時內把問題解決了。|The engineer solved the problem within an hour.
-Nov 2w 用英語表達感受(C)|S|雖然過程非常辛苦，但最後我還是錄取了。|Although the process was very hard, I got into the school in the end.
-Nov 2w 用英語表達感受(C)|S|我確實知道答案。|I do know the answer.
-Nov 2w 用英語表達感受(C)|S|Eve 對她的過去無能為力，所以她不會去想。|There is nothing Eve can do about her past, so she doesn't think about it.
-Nov 3w 科技漫遊 桌面寵物(1)|W|寵物 (n.)|pet
-Nov 3w 科技漫遊 桌面寵物(1)|W|把戲；招式 (n.)|trick
-Nov 3w 科技漫遊 桌面寵物(1)|W|電腦 (n.)|computer
-Nov 3w 科技漫遊 桌面寵物(1)|W|綿羊 (n.)|sheep
-Nov 3w 科技漫遊 桌面寵物(1)|W|機器人 (n.)|robot
-Nov 3w 科技漫遊 桌面寵物(1)|W|設計 (n.)|design
-Nov 3w 科技漫遊 桌面寵物(1)|W|(電腦)桌面 (n.)|desktop
-Nov 3w 科技漫遊 桌面寵物(1)|W|怪獸；怪物 (n.)|monster
-Nov 3w 科技漫遊 桌面寵物(1)|W|反應 (v.)|react
-Nov 3w 科技漫遊 桌面寵物(1)|W|陪伴(某人)|keep someone company
-Nov 3w 科技漫遊 桌面寵物(1)|W|照顧|take care of/care for
-Nov 3w 科技漫遊 桌面寵物(1)|S|我每天都會花時間陪我的寵物。|I spend time with my pet every day.
-Nov 3w 科技漫遊 桌面寵物(1)|S|那是很酷的招式，你從哪裡學來的？|That's a cool trick. Where did you learn it?
-Nov 3w 科技漫遊 桌面寵物(1)|S|我電腦的記憶體很充足。|My computer has plenty of memory.
-Nov 3w 科技漫遊 桌面寵物(1)|S|Kevin 會數羊來幫助自己入睡。|Kevin counts sheep to help himself fall asleep.
-Nov 3w 科技漫遊 桌面寵物(1)|S|這個機器人可以像人一樣跳舞。|This robot can dance like a human.
-Nov 3w 科技漫遊 桌面寵物(1)|S|那名客戶喜歡這個房間的設計。|That customer likes the design of this room.
-Nov 3w 科技漫遊 桌面寵物(1)|S|Mary 在牙醫診所陪我。|Mary kept me company at the dentist's office.
-Nov 3w 科技漫遊 桌面寵物(1)|S|照顧嬰兒不是件容易的事。|Taking care of a baby is not an easy job.
-Nov 3w 科技漫遊 桌面寵物(2)|W|程式 (n.)|program
-Nov 3w 科技漫遊 桌面寵物(2)|W|種子 (n.)|seed
-Nov 3w 科技漫遊 桌面寵物(2)|W|使感興趣 (v.)|interest
-Nov 3w 科技漫遊 桌面寵物(2)|W|下載 (v.)|download
-Nov 3w 科技漫遊 桌面寵物(2)|W|錯誤 (n.)|bug/error/mistake
-Nov 3w 科技漫遊 桌面寵物(2)|W|角落 (n.)|corner
-Nov 3w 科技漫遊 桌面寵物(2)|W|較少地|less
-Nov 3w 科技漫遊 桌面寵物(2)|W|1980 年代中期 (n.)|the mid-1980s
-Nov 3w 科技漫遊 桌面寵物(2)|W|(滑鼠)游標 (n.)|cursor
-Nov 3w 科技漫遊 桌面寵物(2)|W|任務 (n.)|task/mission
-Nov 3w 科技漫遊 桌面寵物(2)|W|推出|come out
-Nov 3w 科技漫遊 桌面寵物(2)|W|附有；附帶|come with
-Nov 3w 科技漫遊 桌面寵物(2)|W|比較不...的 (劣等比較級用法)|less
-Nov 3w 科技漫遊 桌面寵物(2)|S|這個程式可以在我的手機上運作嗎？|Can this program work on my phone?
-Nov 3w 科技漫遊 桌面寵物(2)|S|那位小姐在餵公園的小鳥吃種子。|The woman is feeding seeds to the birds in the park.
-Nov 3w 科技漫遊 桌面寵物(2)|S|電玩遊戲吸引不了 Teresa 的興趣。|Video games don't interest Teresa.
-Nov 3w 科技漫遊 桌面寵物(2)|S|下載那個檔案花了很長的時間。|Downloading that file took a long time.
-Nov 3w 科技漫遊 桌面寵物(2)|S|你的報告中有好幾個錯誤。|There are several mistakes in your report.
-Nov 3w 科技漫遊 桌面寵物(2)|S|我的頭撞到了桌角了。|I hit my head on the corner of the table.
-Nov 3w 科技漫遊 桌面寵物(2)|S|那位作家的新書很快就會推出。|That writer's new book will come out soon.
-Nov 3w 科技漫遊 桌面寵物(2)|S|這個套餐有附飲料。|This meal comes with a drink.
-Nov 3w 科技漫遊 桌面寵物(2)|S|今天比較不潮濕。|It is less humid today.
-Nov 4w 品格英文 化嫉妒為成長(1)|W|獎品；獎項 (n.)|prize/award
-Nov 4w 品格英文 化嫉妒為成長(1)|W|徵兆；跡象 (n.)|sign
-Nov 4w 品格英文 化嫉妒為成長(1)|W|任何人 (pron.)|anyone/anybody
-Nov 4w 品格英文 化嫉妒為成長(1)|W|誠實的 (adj.)|honest
-Nov 4w 品格英文 化嫉妒為成長(1)|W|嫉妒的 (adj.)|jealous
-Nov 4w 品格英文 化嫉妒為成長(1)|W|嫉妒 (n.)|jealousy
-Nov 4w 品格英文 化嫉妒為成長(1)|W|兄弟姊妹 (n.)|sibling
-Nov 4w 品格英文 化嫉妒為成長(1)|W|恐懼 (n.)|fear
-Nov 4w 品格英文 化嫉妒為成長(1)|W|注意、關注|pay attention to
-Nov 4w 品格英文 化嫉妒為成長(1)|W|給予|give
-Nov 4w 品格英文 化嫉妒為成長(1)|W|屬於|belong to
-Nov 4w 品格英文 化嫉妒為成長(1)|W|拿走|take away
-Nov 4w 品格英文 化嫉妒為成長(1)|S|頭獎是歐洲之旅。|The first prize is a trip to Europe.
-Nov 4w 品格英文 化嫉妒為成長(1)|S|煙霧時常是發生火災的徵兆。|Smoke is often a sign of fire.
-Nov 4w 品格英文 化嫉妒為成長(1)|S|那個害羞的男孩沒有跟教室裡的任何人說話。|The shy boy didn't talk to anyone in the classroom.
-Nov 4w 品格英文 化嫉妒為成長(1)|S|老實說，我對你說了一個善意的謊言。|To be honest, I told you a white lie.
-Nov 4w 品格英文 化嫉妒為成長(1)|S|所有的學生都在專心聽美術老師上課。|All the students are paying attention to the art teacher.
-Nov 4w 品格英文 化嫉妒為成長(1)|S|那筆錢不屬於你。|That money doesn't belong to you.
-Nov 4w 品格英文 化嫉妒為成長(1)|S|我媽媽把我的電玩遊戲沒收了。|My mom took away my video games.
-Nov 4w 品格英文 化嫉妒為成長(2)|W|察覺；注意 (v.)|notice
-Nov 4w 品格英文 化嫉妒為成長(2)|W|同學 (n.)|classmate
-Nov 4w 品格英文 化嫉妒為成長(2)|W|角度 (n.)|angle
-Nov 4w 品格英文 化嫉妒為成長(2)|W|焦點；重心 (n.)|focus
-Nov 4w 品格英文 化嫉妒為成長(2)|W|成長 (n.)|growth
-Nov 4w 品格英文 化嫉妒為成長(2)|W|正面的；樂觀的 (adj.)|positive
-Nov 4w 品格英文 化嫉妒為成長(2)|W|把 A 轉換成 B|turn A into B
-Nov 4w 品格英文 化嫉妒為成長(2)|W|使變成|turn
-Nov 4w 品格英文 化嫉妒為成長(2)|W|首先...；接著...；最後|First... Next... Finally
-Nov 4w 品格英文 化嫉妒為成長(2)|W|我也可以|So can I
-Nov 4w 品格英文 化嫉妒為成長(2)|S|沒有人注意到 Heidi 的新髮型。|Nobody noticed Heidi's new hairstyle.
-Nov 4w 品格英文 化嫉妒為成長(2)|S|Lucy 和大部份的同學都相處融洽。|Lucy gets along well with most of her classmates.
-Nov 4w 品格英文 化嫉妒為成長(2)|S|團隊中所有人都試過從各個角度考慮這個問題。|Everyone on the team tried to look at the problem from every angle.
-Nov 4w 品格英文 化嫉妒為成長(2)|S|Bill 的重心不在工作上。|Bill's focus is not on his work.
-Nov 4w 品格英文 化嫉妒為成長(2)|S|Glen 找到了一個把仇恨轉化為愛的方法。|Glen found a way to turn hate into love.
-Nov 4w 品格英文 化嫉妒為成長(2)|S|首先，把平底鍋加熱。接著，在鍋裡倒一點油。最後，打一顆蛋到鍋裡。|First, heat the pan. Next, pour a little oil into the pan. Finally, crack an egg into the pan.
-Nov 4w 品格英文 化嫉妒為成長(2)|S|Lily 會參加比賽，我也會。|Lily will join the contest, and so will I.
-Nov 4w 品格英文 化嫉妒為成長(2)|S|Emily 喜歡巧克力，Tom 也是。|Emily likes chocolate, and so does Tom.
-
-</script>
-
 <script>
-const raw = document.getElementById("rawBank").textContent.trim().split("\n");
-const DB = raw.filter(l => l.includes("|")).map(l => {
-  const p = l.split("|");
-  return { u: p[0].trim(), t: p[1].trim(), zh: p[2].trim(), en: p[3].split("/").map(s => s.trim()) };
-});
-let curQ = [];
+let DB = [], curQ = [];
 let savedWrong = JSON.parse(localStorage.getItem("abc_wrong_book") || "[]");
-
 const uSel = document.getElementById("uSel");
-[...new Set(DB.map(x => x.u))].forEach(u => { let o = document.createElement("option"); o.value = o.textContent = u; uSel.appendChild(o); });
 const norm = s => s.trim().toLowerCase().replace(/[.!?,;]+$/g, "").replace(/\s+/g, " ");
+
+// 自動讀取同資料夾下的 bank.txt 題庫檔
+fetch("bank.txt?t=" + Date.now())
+  .then(res => { if (!res.ok) throw new Error(); return res.text(); })
+  .then(text => {
+    DB = text.trim().split("\n").filter(l => l.includes("|")).map(l => {
+      const p = l.split("|");
+      return { u: p[0].trim(), t: p[1].trim(), zh: p[2].trim(), en: p[3].split("/").map(s => s.trim()) };
+    });
+    uSel.innerHTML = "";
+    [...new Set(DB.map(x => x.u))].forEach(u => {
+      let o = document.createElement("option");
+      o.value = o.textContent = u;
+      uSel.appendChild(o);
+    });
+  })
+  .catch(() => { uSel.innerHTML = "<option>讀取失敗，請確認已建立 bank.txt</option>"; });
 
 function updateWrongCount() {
   document.getElementById("viewWrongBtn").textContent = `📒 查看錯題本 (${savedWrong.length})`;
@@ -464,6 +93,7 @@ function updateWrongCount() {
 updateWrongCount();
 
 function go() {
+  if (!DB.length) return alert("題庫尚未載入完成！");
   const u = uSel.value;
   const words = DB.filter(x => x.u === u && x.t === "W");
   const sents = DB.filter(x => x.u === u && x.t === "S");
