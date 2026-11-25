@@ -14,6 +14,7 @@
     select{width:100%;padding:.75rem;font-size:1rem;border:1px solid #cbd5e1;border-radius:8px;background:#fff}
     .q-item{background:#f8fafc;padding:1rem;border-radius:8px;border:1px solid #e2e8f0;margin-bottom:.9rem}
     .q-title{font-weight:bold;margin-bottom:.5rem;font-size:1.05rem;line-height:1.4}
+    .q-unit{font-size:.8rem;color:#64748b;margin-bottom:.3rem}
     input{width:100%;padding:.65rem;font-size:1rem;border:2px solid #cbd5e1;border-radius:6px;box-sizing:border-box;outline:none}
     input:focus{border-color:#2563eb}
     input.ok{border-color:#10b981;background:#ecfdf5}
@@ -21,9 +22,9 @@
     .ans-tip{margin-top:.4rem;font-size:.92rem;font-weight:bold}
     .ans-tip.ok{color:#10b981}.ans-tip.no{color:#ef4444}
     .btns{display:flex;gap:10px;justify-content:center;margin-top:1.5rem;flex-wrap:wrap}
-    button{padding:.75rem 1.8rem;font-size:1rem;font-weight:bold;border:none;border-radius:8px;cursor:pointer;color:#fff}
-    .b1{background:#2563eb}.b2{background:#10b981}.b3{background:#64748b}
-    .score-banner{background:#eff6ff;color:#1e40af;padding:1rem;border-radius:10px;text-align:center;font-size:1.2rem;font-weight:bold;margin-bottom:1.2rem;display:none}
+    button{padding:.75rem 1.4rem;font-size:1rem;font-weight:bold;border:none;border-radius:8px;cursor:pointer;color:#fff}
+    .b1{background:#2563eb}.b2{background:#10b981}.b3{background:#64748b}.b-warn{background:#f59e0b}.b-del{background:#ef4444}
+    .score-banner{background:#eff6ff;color:#1e40af;padding:1rem;border-radius:10px;text-align:center;font-size:1.15rem;font-weight:bold;margin-bottom:1.2rem;display:none}
   </style>
 </head>
 <body>
@@ -35,7 +36,10 @@
       <label for="uSel">選擇要測驗的單元：</label>
       <select id="uSel"></select>
     </div>
-    <div class="btns"><button type="button" class="b1" onclick="go()">展開本篇所有題目</button></div>
+    <div class="btns">
+      <button type="button" class="b1" onclick="go()">展開本篇所有題目</button>
+      <button type="button" class="b-warn" id="viewWrongBtn" onclick="showWrongBook()">📒 查看錯題本 (0)</button>
+    </div>
   </div>
 
   <div id="s2" style="display:none">
@@ -43,13 +47,26 @@
     <div id="listArea"></div>
     <div class="btns">
       <button type="button" class="b2" id="subBtn" onclick="chkAll()">全部交卷批改</button>
+      <button type="button" class="b-warn" id="goWrongBtn2" style="display:none" onclick="showWrongBook()">📒 前往錯題本</button>
       <button type="button" class="b1" id="retryBtn" style="display:none" onclick="go()">重新作答本篇</button>
-      <button type="button" class="b3" onclick="rst()">切換其他單元</button>
+      <button type="button" class="b3" onclick="rst()">返回單元選單</button>
+    </div>
+  </div>
+
+  <div id="s3" style="display:none">
+    <h2>📒 已收集的錯題清單</h2>
+    <div id="wrongListArea"></div>
+    <div class="btns">
+      <button type="button" class="b1" onclick="copyWrong()">📋 一鍵複製全部錯題</button>
+      <button type="button" class="b-del" onclick="clearWrong()">🗑️ 清空錯題本</button>
+      <button type="button" class="b3" onclick="rst()">返回單元選單</button>
     </div>
   </div>
 </div>
 
 <!-- 題庫資料區（請將你收集的所有題庫貼在下方 script 標籤中間） -->
+<script type="text/plain" id="rawBank">
+  
 <script type="text/plain" id="rawBank">
 用英語談論家人|W|(外)祖父|grandfather/grandpa
 用英語談論家人|W|(外)祖母|grandmother/grandma
@@ -425,9 +442,6 @@ Nov 4w 品格英文 化嫉妒為成長(2)|S|Glen 找到了一個把仇恨轉化�
 Nov 4w 品格英文 化嫉妒為成長(2)|S|首先，把平底鍋加熱。接著，在鍋裡倒一點油。最後，打一顆蛋到鍋裡。|First, heat the pan. Next, pour a little oil into the pan. Finally, crack an egg into the pan.
 Nov 4w 品格英文 化嫉妒為成長(2)|S|Lily 會參加比賽，我也會。|Lily will join the contest, and so will I.
 Nov 4w 品格英文 化嫉妒為成長(2)|S|Emily 喜歡巧克力，Tom 也是。|Emily likes chocolate, and so does Tom.
-  
-
-
 
 </script>
 
@@ -438,9 +452,16 @@ const DB = raw.filter(l => l.includes("|")).map(l => {
   return { u: p[0].trim(), t: p[1].trim(), zh: p[2].trim(), en: p[3].split("/").map(s => s.trim()) };
 });
 let curQ = [];
+let savedWrong = JSON.parse(localStorage.getItem("abc_wrong_book") || "[]");
+
 const uSel = document.getElementById("uSel");
 [...new Set(DB.map(x => x.u))].forEach(u => { let o = document.createElement("option"); o.value = o.textContent = u; uSel.appendChild(o); });
 const norm = s => s.trim().toLowerCase().replace(/[.!?,;]+$/g, "").replace(/\s+/g, " ");
+
+function updateWrongCount() {
+  document.getElementById("viewWrongBtn").textContent = `📒 查看錯題本 (${savedWrong.length})`;
+}
+updateWrongCount();
 
 function go() {
   const u = uSel.value;
@@ -448,8 +469,7 @@ function go() {
   const sents = DB.filter(x => x.u === u && x.t === "S");
   curQ = [...words, ...sents];
   
-  let html = "";
-  let idx = 0;
+  let html = "", idx = 0;
   if (words.length) {
     html += `<h2>一、單字與片語（共 ${words.length} 題）</h2>`;
     words.forEach(q => { html += renderItem(q, idx++); });
@@ -462,8 +482,10 @@ function go() {
   document.getElementById("listArea").innerHTML = html;
   document.getElementById("scBanner").style.display = "none";
   document.getElementById("subBtn").style.display = "inline-block";
+  document.getElementById("goWrongBtn2").style.display = "none";
   document.getElementById("retryBtn").style.display = "none";
   document.getElementById("s1").style.display = "none";
+  document.getElementById("s3").style.display = "none";
   document.getElementById("s2").style.display = "block";
   window.scrollTo(0, 0);
 }
@@ -477,7 +499,7 @@ function renderItem(q, i) {
 }
 
 function chkAll() {
-  let okCnt = 0;
+  let okCnt = 0, newWrongCnt = 0;
   curQ.forEach((q, i) => {
     const inp = document.getElementById(`inp_${i}`);
     const tip = document.getElementById(`tip_${i}`);
@@ -492,19 +514,63 @@ function chkAll() {
       inp.className = "no";
       tip.className = "ans-tip no";
       tip.textContent = `✘ 參考答案：${q.en.join(" / ")}`;
+      if (!savedWrong.some(w => w.u === q.u && w.zh === q.zh)) {
+        savedWrong.push(q);
+        newWrongCnt++;
+      }
     }
   });
+  localStorage.setItem("abc_wrong_book", JSON.stringify(savedWrong));
+  updateWrongCount();
+
   const sc = Math.round((okCnt / curQ.length) * 100);
   const banner = document.getElementById("scBanner");
-  banner.textContent = `測驗成績：${sc} 分（答對 ${okCnt} / ${curQ.length} 題）`;
+  banner.textContent = `測驗成績：${sc} 分（答對 ${okCnt} / ${curQ.length} 題）` + (newWrongCnt > 0 ? `｜已自動收錄 ${newWrongCnt} 題至錯題本` : "");
   banner.style.display = "block";
   document.getElementById("subBtn").style.display = "none";
   document.getElementById("retryBtn").style.display = "inline-block";
+  if (savedWrong.length > 0) document.getElementById("goWrongBtn2").style.display = "inline-block";
   window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function showWrongBook() {
+  const area = document.getElementById("wrongListArea");
+  if (!savedWrong.length) {
+    area.innerHTML = `<div class="panel" style="text-align:center;color:#64748b">目前錯題本是空的，繼續保持！</div>`;
+  } else {
+    area.innerHTML = savedWrong.map((q, i) => `
+      <div class="q-item">
+        <div class="q-unit">來源：${q.u}（${q.t === "W" ? "單字/片語" : "句子"}）</div>
+        <div class="q-title">${i + 1}. ${q.zh}</div>
+        <div class="ans-tip ok">參考答案：${q.en.join(" / ")}</div>
+      </div>
+    `).join("");
+  }
+  document.getElementById("s1").style.display = "none";
+  document.getElementById("s2").style.display = "none";
+  document.getElementById("s3").style.display = "block";
+  window.scrollTo(0, 0);
+}
+
+function copyWrong() {
+  if (!savedWrong.length) return alert("目前沒有錯題可複製！");
+  const txt = savedWrong.map((q, i) => `${i + 1}. [${q.u}] ${q.zh}\n   答案：${q.en.join(" / ")}`).join("\n\n");
+  navigator.clipboard.writeText(txt).then(() => alert("已將全部錯題複製到剪貼簿，可直接貼上！"));
+}
+
+function clearWrong() {
+  if (!savedWrong.length) return;
+  if (confirm("確定要清空所有已收集的錯題嗎？")) {
+    savedWrong = [];
+    localStorage.removeItem("abc_wrong_book");
+    updateWrongCount();
+    showWrongBook();
+  }
 }
 
 function rst() {
   document.getElementById("s2").style.display = "none";
+  document.getElementById("s3").style.display = "none";
   document.getElementById("s1").style.display = "block";
 }
 </script>
